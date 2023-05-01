@@ -5,12 +5,12 @@
     <div class="content">
         <div class="page-header">
             <div class="page-title">
-                <h4>Liste du personnel</h4>
+                <h4>Liste des entreprises</h4>
                 <h6></h6>
             </div>
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img
-                        src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter un utilisateur</a>
+                        src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter une entreprise</a>
             </div>
         </div>
 
@@ -97,7 +97,7 @@
                             <label for="">un role <span class="text-danger">*</span>:</label>
                             <select class="form-control" wire:model="role_id" id="">
                                 <option selected>selectionner un role</option>
-                                    <option value="{{ RoleEnum::GERANT}}">gérant</option>
+                                    <option value="{{ RoleEnum::COMPANY}}">société</option>
 
 
 

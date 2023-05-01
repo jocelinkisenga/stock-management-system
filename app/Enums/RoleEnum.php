@@ -14,4 +14,6 @@ enum RoleEnum: int
 
     const SERVER = 4;
     
+    const COMPANY =  5;
+    
 }

@@ -6,12 +6,14 @@ use App\Models\Produit;
 use App\Models\Reduction;
 use App\Utilities\FormatDate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index(){
-        $produits = Produit::all();
+        $produits = Produit::where("user_id",Auth::user()->id)->get();
+     
         $notifications = Reduction::whereStatus(false)->get();
         return view('Pages.index',compact("produits","notifications"));
     }

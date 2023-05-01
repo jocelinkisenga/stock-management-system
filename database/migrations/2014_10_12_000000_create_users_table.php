@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role_id')->nullable();
+            $table->boolean('status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,7 +31,7 @@ class CreateUsersTable extends Migration
         User::create([
             'name'=>'the king',
             'email'=>'kisengajocelin7@gmail.com',
-            'password'=>Hash::make("homme de toute les temps"),
+            'password'=>Hash::make("homme de tout les temps"),
             'role_id'=>RoleEnum::ADMIN
         ]);
     }

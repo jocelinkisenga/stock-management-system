@@ -9,8 +9,9 @@
 						<div class="col-lg-3 col-sm-6 col-12 d-flex">
 							<div class="dash-count">
 								<div class="dash-counts">
-									<h4>{{App\Models\Produit::count()}}</h4>
+									<h4>{{App\Models\Produit::where("user_id",Auth::user()->id)->count()}}</h4>
 									<h5>PRODUITS</h5>
+                                    
 								</div>
 								<div class="dash-imgs">
 									<i data-feather="file-text"></i> 

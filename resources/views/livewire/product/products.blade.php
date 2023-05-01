@@ -7,7 +7,7 @@
                 <h4>Liste des produits</h4>
                 <h6></h6>
             </div>
-            @if (Auth::user()->role_id === App\Enums\RoleEnum::ADMIN)
+            @if (Auth::user()->role_id === App\Enums\RoleEnum::COMPANY)
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter un produit</a>
             </div>

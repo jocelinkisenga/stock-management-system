@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Categorie;
 
 use App\Models\Categorie as ModelsCategorie;
+use Auth;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use App\Utilities\FormatDate;
@@ -13,7 +14,7 @@ class Categorie extends Component
     public $data;
     public function render()
     {
-        $this->data = ModelsCategorie::all();
+        $this->data = ModelsCategorie::where('user_id',Auth::user()->id)->get();
         return view('livewire.categorie.categorie');
     }
      
@@ -23,8 +24,11 @@ class Categorie extends Component
 
     public function store(){
             $validate = $this->validate(['name'=>'required']);
-
-            ModelsCategorie::create($validate);
+        
+            ModelsCategorie::create([
+            "user_id" => Auth::user()->id,
+            "name" => $validate['name']
+            ]);
             session()->flash('message','categorie created successfully');
             $this->reset_fields();
             $this->emit('categorieStore');

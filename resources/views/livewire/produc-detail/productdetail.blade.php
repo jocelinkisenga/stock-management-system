@@ -6,7 +6,7 @@
             <div class="page-title">
                 <h4>Produit detail</h4>
             </div>
-            @if (Auth::user()->role_id === App\Enums\RoleEnum::ADMIN)
+            @if (Auth::user()->role_id === App\Enums\RoleEnum::COMPANY)
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#quantity" class="btn btn-success"><img src="{{asset('assets/img/icons/plus.svg')}}" alt="img" class="me-1">MàJ de la quantité</a>
             </div>

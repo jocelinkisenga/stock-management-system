@@ -145,8 +145,8 @@
                         
                     </div>
                     <div class="col-lg-12">
-                        <a class="btn btn-submit me-2" wire:click.prevent="store()">Submit</a>
-                        <a class="btn btn-cancel" data-bs-dismiss="modal">Cancel</a>
+                        <a class="btn btn-submit me-2" wire:click.prevent="store()">Ajouter</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">Annuler</a>
                     </div>
                 </div>
             </div>
