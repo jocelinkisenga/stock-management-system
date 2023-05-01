@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\DevController;
+use App\Http\Controllers\PrecommandeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\DepenseController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Manager\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RapportController;
 use App\Http\Controllers\ReductionController;
@@ -46,9 +47,16 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/produits',[ProductController::class,'index'])->name('products');
     Route::get('/categories',[CategorieController::class,'index'])->name('categories');
     Route::get('/depenses',[DepenseController::class,'index'])->name('depenses');
+    Route::get('/home',[HomeController::class,'index'])->name('home.index');
 });
 
-
+Route::middleware(['gerant','auth'])->group(function(){
+    Route::get('/tables',[TableController::class,'index'])->name('tables');
+    // Route::get('/home',[PrecommandeController::class,'index'])->name('commandes');
+    Route::get('/commande/{id}',[CommandeController::class,'new'])->name('new_commande');
+    Route::get('/facture/{id}',[HomeController::class,'facture'])->name('facture');
+    Route::get('/produit-detail/{id}',[ProductController::class,'show'])->name('product-detail');
+});
 
 Route::middleware(['admin','auth','gerant'])->group(function(){
 

@@ -15,6 +15,7 @@ class CreateHystoryProductsTable extends Migration
     {
         Schema::create('hystory_products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
             $table->foreignId('product_id');
             $table->bigInteger('new_quantity');
             $table->bigInteger('old_quantity');

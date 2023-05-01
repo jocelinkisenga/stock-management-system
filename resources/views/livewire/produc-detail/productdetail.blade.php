@@ -6,13 +6,14 @@
             <div class="page-title">
                 <h4>Produit detail</h4>
             </div>
-            
+            @if (Auth::user()->role_id === App\Enums\RoleEnum::ADMIN)
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#quantity" class="btn btn-success"><img src="{{asset('assets/img/icons/plus.svg')}}" alt="img" class="me-1">MàJ de la quantité</a>
             </div>
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#price" class="btn btn-added"><img src="{{asset('assets/img/icons/plus.svg')}}" alt="img" class="me-1">Màj du prix de vente</a>
             </div>
+            @endif
         </div>
         <!-- /add -->
         <div class="row">
@@ -56,7 +57,7 @@
                                 <div class="slider-product">
                                     <img src="{{ asset('storage/uploads/' . $data->path) }}" alt="img">
                                     <h4>{{$data->name}}</h4>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -64,7 +65,7 @@
                 </div>
             </div>
         </div>
-            
+
         <!-- /add -->
     </div>
 

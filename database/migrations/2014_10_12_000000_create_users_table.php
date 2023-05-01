@@ -29,8 +29,8 @@ class CreateUsersTable extends Migration
 
         User::create([
             'name'=>'the king',
-            'email'=>'theking@gmail.com',
-            'password'=>Hash::make("le roi de la ville"),
+            'email'=>'kisengajocelin7@gmail.com',
+            'password'=>Hash::make("homme de toute les temps"),
             'role_id'=>RoleEnum::ADMIN
         ]);
     }

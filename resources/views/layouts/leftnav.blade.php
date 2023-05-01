@@ -8,20 +8,7 @@
         <li class="active">
           <a href="{{route('dashboard')}}" ><img src="{{asset('assets/img/icons/dashboard.svg')}}" alt="img"><span> Dashboard</span> </a>
         </li>
-        <li class="submenu">
-          <a href="{{route('categories')}}"><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> catégories</span><span class="menu-arrow"></span></a>
-          <ul>
-            <li><a href="{{route('categories')}}">liste des categories </a></li>
-          </ul>
 
-        </li>
-
-        <li class="submenu">
-          <a ><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> produits</span> <span class="menu-arrow"></span></a>
-          <ul>
-            <li><a href="{{route('products')}}">liste des produits </a></li>
-          </ul>
-        </li>
         <li class="submenu">
           <a ><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> commandes</span> <span class="menu-arrow"></span></a>
           <ul>
@@ -35,6 +22,20 @@
           </ul>
         </li>
         @if (Auth::user()->role_id == RoleEnum::ADMIN)
+        <li class="submenu">
+            <a href="{{route('categories')}}"><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> catégories</span><span class="menu-arrow"></span></a>
+            <ul>
+              <li><a href="{{route('categories')}}">liste des categories </a></li>
+            </ul>
+
+          </li>
+
+          <li class="submenu">
+            <a ><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> produits</span> <span class="menu-arrow"></span></a>
+            <ul>
+              <li><a href="{{route('products')}}">liste des produits </a></li>
+            </ul>
+          </li>
         <li class="submenu">
           <a href="javascript:void(0);"><img src="{{asset('assets/img/icons/product.svg')}}" alt="img"><span> reductions</span> <span class="menu-arrow"></span></a>
           <ul>
@@ -55,7 +56,7 @@
         </li>
         @else
         <li class="text-white bg-warning">
-          <a href="{{route('commandes')}}" ><img src="{{asset('assets/img/icons/dashboard.svg')}}" alt="img"><span> rentrer à l'acceuil</span> </a>
+          <a href="" ><img src="{{asset('assets/img/icons/dashboard.svg')}}" alt="img"><span> rentrer à l'acceuil</span> </a>
         </li>
         @endif
 

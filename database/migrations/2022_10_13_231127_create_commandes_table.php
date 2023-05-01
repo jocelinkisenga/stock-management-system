@@ -15,7 +15,7 @@ class CreateCommandesTable extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('precommande_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreignId('produit_id');
             $table->bigInteger('quantity_commande');
             $table->boolean('status')->default(false);

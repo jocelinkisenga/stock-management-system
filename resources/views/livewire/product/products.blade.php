@@ -7,11 +7,14 @@
                 <h4>Liste des produits</h4>
                 <h6></h6>
             </div>
+            @if (Auth::user()->role_id === App\Enums\RoleEnum::ADMIN)
             <div class="page-btn">
                 <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter un produit</a>
             </div>
+            @endif
+
         </div>
-        
+
 
         <!-- /product list -->
         <div class="card">
@@ -162,8 +165,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-12">
-                          
-                               
+
+
                                 <div class="form-group">
                                     <label for="my-select">Text</label>
                                     <select id="my-select" class="form-control" wire:model="categorie_id">
@@ -171,10 +174,10 @@
                                         @foreach ($categories as $item )
                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
-                                        
+
                                     </select>
                                 </div>
-                           
+
                         </div>
                     </div>
                     <div class="col-lg-12">
