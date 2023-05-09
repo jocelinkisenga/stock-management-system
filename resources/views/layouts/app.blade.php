@@ -34,7 +34,7 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/all.min.css')}}">
-    
+
 
     <link rel="stylesheet" href="{{asset('css/buttons.bootstrap4.min.css')}}">
     <!-- Main CSS -->
@@ -50,10 +50,10 @@
 		<div class="main-wrapper">
             @include("layouts.navigation")
 			<!-- Header -->
-			
+
 			<!-- Sidebar -->
                 @include('layouts.leftnav')
-           
+
 
             @yield('content')
 
@@ -61,9 +61,6 @@
             <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
             <script src="assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-
-
-   
 <script src="{{asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
@@ -71,9 +68,9 @@
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 			@livewireScripts
     <!-- jQuery -->
-    
+
   @yield('script')
-    
+
     <script src="{{asset('js/printThis.js')}}"></script>
     <!-- Feather Icon JS -->
     <script src="{{asset('assets/js/feather.min.js')}}"></script>
@@ -99,14 +96,10 @@
     <!-- Sweetalert 2 -->
     <script src="{{asset('assets/plugins/sweetalert/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('assets/plugins/sweetalert/sweetalerts.min.js')}}"></script>
-
-
-   
-
 <!-- AdminLTE App -->
 
     <!-- Custom JS -->
     <script src="{{asset('assets/js/script.js')}}"></script>
-		
+
 	</body>
 </html>

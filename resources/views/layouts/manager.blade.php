@@ -57,13 +57,11 @@
 
             @yield('content')
 
+        </div>
             <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
             <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
             <script src="assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-
-
-
 <script src="{{asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
@@ -99,10 +97,6 @@
     <!-- Sweetalert 2 -->
     <script src="{{asset('assets/plugins/sweetalert/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('assets/plugins/sweetalert/sweetalerts.min.js')}}"></script>
-
-
-
-
 <!-- AdminLTE App -->
 
     <!-- Custom JS -->

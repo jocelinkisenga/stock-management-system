@@ -58,13 +58,12 @@
 						<div class="card-body">
 							<h4 class="card-title">listes des produits</h4>
 							<div class="table-responsive dataview">
-								<table class="table datatable ">
+								<table class="table datatable table-responsive">
 									<thead>
 										<tr>
 											<th>SNo</th>
 
 											<th>nom</th>
-											<th>categorie</th>
 											<th>quantité</th>
 											<th>prix</th>
                                             <th>Actions</th>
@@ -76,14 +75,13 @@
 											<td>{{$key+1}}</td>
 											<td class="productimgname">
 												<a class="product-img" href="productlist.html">
-													<img src="{{ asset('storage/uploads/' . $item->path) }}" alt="product">
+													<img src="{{ asset('storage/uploads/' . $item->path) }}">
 												</a>
 												<a href="productlist.html">{{$item->name}}</a>
 											</td>
-											<td>{{$item->categorie->name}}</td>
 											<td>{{$item->quantity}}</td>
 											<td>{{$item->price}} $</td>
-                                            <td><i class=""></i></td>
+                                            <td>@livewire("buttonbuy",  ["product_id" =>$item->id])</td>
 										</tr>
 										@endforeach
 

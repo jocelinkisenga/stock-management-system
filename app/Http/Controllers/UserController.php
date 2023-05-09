@@ -30,7 +30,7 @@ class UserController extends Controller
     }
 
 
-    
+
     /**
      * Summary of show
      * @param int $id
@@ -39,10 +39,9 @@ class UserController extends Controller
      */
     public function show(int $id){
         $data = User::find($id);
-       DB::statement("SET SQL_MODE=''");
-       $precommandes = Commande::latest('commandes.created_at')->join('precommandes','precommandes.id','commandes.precommande_id')->with('reduction')->where('precommandes.server_id',$id)->groupBy('commandes.precommande_id')->get();
-   
-        return view('pages.userdetail',compact('data','precommandes'));
+
+
+        return view('pages.userdetail',compact('data'));
     }
 
     public function update(Request $request){
