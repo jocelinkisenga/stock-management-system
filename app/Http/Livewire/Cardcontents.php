@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Repositorie\CardRepository;
 use Livewire\Component;
 
 class Cardcontents extends Component
@@ -21,18 +22,19 @@ class Cardcontents extends Component
     }
 
     public function plus(int $id){
-        \CartFacade::update($id,[
-            "quantity" => $this->quantity+1
-        ]);
+        $card = new CardRepository;
+        $card->plusQuantity($id);
     }
 
     public function addQuantity(int $id){
+            $card = new CardRepository;
+            $card->addQty($id,$this->input_quantity);
 
+    }
 
-        \CartFacade::update($id,[
-            "quantity" => $this->input_quantity
-        ]);
-        $this->emptyQuantity();
+    public function minus(int $id){
+        $card = new CardRepository;
+        $card->minusQuantity($id);
     }
 
         public function delete(int $id){
@@ -43,9 +45,7 @@ class Cardcontents extends Component
 
     }
 
-    private  function emptyQuantity(){
-        $this->quantity = " ";
-    }
+
 
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Repositorie\CardRepository;
 use App\Models\Produit;
 use Livewire\Component;
 
@@ -17,19 +18,7 @@ class Buttonbuy extends Component
 
     public function add(int $id)
     {
-        $product = Produit::find($id);
-        $cartItem = \CartFacade::get($product->id);
-        if(empty($cartItem)){
-            \CartFacade::add([
-                "id" => $product->id,
-                "name" => $product->name,
-                "price" => $product->price,
-                "quantity" => 1,
-            ]);
-            $this->emit("added");
-        }
-        else{
-            dd("product already exists");
-        }
+       $card = new CardRepository;
+       $card->addToCart($id);
     }
 }
