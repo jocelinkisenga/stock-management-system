@@ -51,14 +51,11 @@
 
         <!-- Notifications -->
         <li class="nav-item dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="modal" data-bs-target="#basket">
-                <i class="fa fa-shopping-basket"></i> <span
-                    class="badge rounded-pill">
-                    @livewire("contentscount")
-                </span>
+            <a href="javascript:void(0);" class="dropdown-toggle nav-link" >
+
             </a>
 
-                    @livewire("cardcontents")
+
 
 
 

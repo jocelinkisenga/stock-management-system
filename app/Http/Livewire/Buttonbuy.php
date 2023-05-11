@@ -8,6 +8,7 @@ use Livewire\Component;
 class Buttonbuy extends Component
 {
     public int $product_id;
+    protected $listeners = ["removed" => "render"];
 
     public function render()
     {
