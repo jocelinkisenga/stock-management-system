@@ -15,10 +15,10 @@ class CardRepository {
                 "price" => $product->price,
                 "quantity" => 1,
             ]);
-            $this->emit("added");
+          return true;
         }
         else{
-            dd("product already exists");
+            return false;
         }
     }
 
@@ -28,7 +28,7 @@ class CardRepository {
         \CartFacade::update($id,[
             "quantity" => $quantity
         ]);
-  
+
     }
 
     public function plusQuantity($id){

@@ -19,6 +19,11 @@ class Buttonbuy extends Component
     public function add(int $id)
     {
        $card = new CardRepository;
-       $card->addToCart($id);
+       $data = $card->addToCart($id);
+       if($data === false){
+        dd("product already exist");
+       }else{
+        $this->emit("added");
+       }
     }
 }
