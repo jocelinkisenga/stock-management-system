@@ -58,7 +58,7 @@ Route::middleware(['gerant','auth'])->group(function(){
     Route::get('/produit-detail/{id}',[ProductController::class,'show'])->name('product-detail');
 });
 
-Route::middleware(['admin','auth','gerant'])->group(function(){
+Route::middleware(['auth'])->group(function(){
 
 
 

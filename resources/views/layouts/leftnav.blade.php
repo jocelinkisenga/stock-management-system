@@ -10,21 +10,21 @@
                             alt="img"><span> Dashboard</span> </a>
                 </li>
                 @if (Auth::user()->role_id == RoleEnum::COMPANY)
-                    <li class="submenu">
+                    <li class="">
                         <a href="{{ route('categories') }}"><img src="{{ asset('assets/img/icons/product.svg') }}"
                                 alt="img"><span> catégories</span><span class="menu-arrow"></span></a>
-                        <ul>
+                        {{-- <ul>
                             <li><a href="{{ route('categories') }}">liste des categories </a></li>
-                        </ul>
+                        </ul> --}}
 
                     </li>
 
-                    <li class="submenu">
-                        <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> produits</span>
+                    <li class="">
+                        <a  href="{{ route('products') }}"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> produits</span>
                             <span class="menu-arrow"></span></a>
-                        <ul>
+                        {{-- <ul>
                             <li><a href="{{ route('products') }}">liste des produits </a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="submenu">
                         <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> commandes</span>
@@ -46,12 +46,14 @@
                         <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}"
                                 alt="img"><span> rapport</span> <span class="menu-arrow"></span></a>
                         <ul>
-                            <li><a href="{{ route('rapports') }}">rapport </a></li>
+                            <li><a href="{{ route('rapports') }}">rapport générale </a></li>
+                            <li><a href="{{ route('rapports') }}">sorties </a></li>
+                            <li><a href="{{ route('rapports') }}">entrées </a></li>
                         </ul>
                     </li>
                 @endif
 
-                @if (Auth::user()->role_id == RoleEnum::ADMIN)
+                    @if (Auth::user()->role_id == RoleEnum::ADMIN)
                     <li class="submenu">
                         <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}"
                                 alt="img"><span> personnel</span> <span class="menu-arrow"></span></a>
