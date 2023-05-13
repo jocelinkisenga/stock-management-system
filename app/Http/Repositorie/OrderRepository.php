@@ -6,9 +6,18 @@ use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\Produit;
 
+/**
+ * Summary of OrderRepository
+ * this class stores order 
+ */
 class OrderRepository
 {
 
+    /**
+     * Summary of storeOrder
+     * @return void
+     * this function stores order of cart facade
+     */
     public function storeOrder()
     {
 
@@ -27,6 +36,12 @@ class OrderRepository
 
     }
 
+    /**
+     * Summary of storeOrderDetails
+     * @param mixed $order_id order id
+     * @return void
+     * this function stores data of an order details
+     */
     private function storeOrderDetails($order_id)
     {
         $contents = \CartFacade::getContent();
@@ -53,6 +68,13 @@ class OrderRepository
     }
 
 
+    /**
+     * Summary of substract_quantity
+     * @param mixed $productId
+     * @param mixed $quantity
+     * @return void
+     * this function substracts quantity from the products table
+     */
     private function substract_quantity($productId, $quantity)
     {
         $result = Produit::where('id', '=', $productId)->first();

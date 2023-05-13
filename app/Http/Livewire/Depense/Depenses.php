@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Depenses extends Component
 {
-    public $depenses, $user_id, $motif, $montant;
+    public $depenses, $user_name, $motif, $montant;
 
 
     /**
@@ -28,7 +28,7 @@ class Depenses extends Component
      */
     public function store(){
             $valide = $this->validate([
-                "user_id"=>"required",
+                "user_name"=>"required",
                 "motif"=>"required",
                 "montant"=>"required"
             ]);

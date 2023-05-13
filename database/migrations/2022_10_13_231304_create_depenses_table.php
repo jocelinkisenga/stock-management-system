@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class CreateDepensesTable extends Migration
 {
-    
+
     /**
      * Run the migrations.
      *
@@ -17,7 +17,7 @@ class CreateDepensesTable extends Migration
     {
         Schema::create('depenses', function (Blueprint $table) {
             $table->id();
-            $table->string('uder_id');
+            $table->string('user_name')->nullable();
             $table->text('motif');
             $table->double('montant');
             $table->timestamps();
