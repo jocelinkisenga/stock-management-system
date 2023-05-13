@@ -111,7 +111,7 @@
                                     {{$key+1}}
                                 </td>
                                 <td >
-                                    {{$item->user->name}}
+                                    {{$item->user_name}}
                                 </td>
                                 <td>{{$item->montant}} $</td>
                                 <td>{{$item->motif}}</td>
