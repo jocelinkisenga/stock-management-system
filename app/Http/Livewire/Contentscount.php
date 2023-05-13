@@ -7,7 +7,7 @@ use Livewire\Component;
 class Contentscount extends Component
 {
 
-    protected $listeners = ["added" => "render", "removed"=> "render"];
+    protected $listeners = ["added" => "render", "removed"=> "render", "ordered" => "render"];
     public int $count;
     public $quantity;
 

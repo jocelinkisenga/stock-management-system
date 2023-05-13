@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Http\Repositorie\CardRepository;
+use App\Http\Repositorie\OrderRepository;
 use Livewire\Component;
 
 class Cardcontents extends Component
@@ -45,7 +46,11 @@ class Cardcontents extends Component
 
     }
 
-
+public function store_order(){
+    $order = new OrderRepository;
+    $order->storeOrder();
+    $this->emit("ordered");
+}
 
 
 }

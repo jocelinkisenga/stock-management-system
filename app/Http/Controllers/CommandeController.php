@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
+use App\Models\Order;
 use App\Models\Precommande;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,10 +29,9 @@ class CommandeController extends Controller
      */
     public function admin_commande(){
 
-        DB::statement("SET SQL_MODE=''");
-        $commandes = Commande::latest()->with('precommande')->with('reduction')->groupBy('precommande_id')->get();
-       
-        return view('Pages.adminCommandes',compact('commandes'));
+        $orders  = Order::latest()->where("user_id",Auth::user()->id)->get();
+
+        return view('Pages.adminCommandes',compact('orders'));
     }
 
     // public function show(int $id){

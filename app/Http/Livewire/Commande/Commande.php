@@ -36,7 +36,7 @@ class Commande extends Component
 
         $commande = new  CommandeRepositorie;
         $this->precommande_id = $commandeId;
-        
+
 
         $produit = $commande->produit_by_id($this->produit_id);
 
@@ -63,11 +63,11 @@ class Commande extends Component
      */
     public function reduire($commandId, $produitId)
     {
-       
+
         $commande = new  CommandeRepositorie;
        $result =  $commande->reduire_quantity($commandId, $produitId);
-     
-      
+
+
     }
 
 
@@ -78,14 +78,14 @@ class Commande extends Component
           * @param mixed $quantity
           * @return void
           */
-    
+
     public function annuler($commandId, $produitId,$quantity)
     {
-       
+
         $commande = new  CommandeRepositorie;
        $result =  $commande->delete_commande($commandId, $produitId,$quantity);
-     
-      
+
+
     }
 
 

@@ -45,41 +45,23 @@
 
                 <th>quantité</th>
                 <th>sous-total</th>
-                <th>reduction</th>
-                <th>prix total</th>
                 <th>date</th>
-                <th>status</th>
                   </tr>
                   </thead>
                   <tbody>
 
-                    @foreach ($commandes as $item)
+                    @foreach ($orders as $item)
                     <tr>
-                        <td>{{$item->precommande->code}}</td>
-                        <td>{{$item->quantity_commande}}
+                        <td>{{$item->code}}</td>
+                        <td>{{$item->total_products}}
                         </td>
-                        <td>{{ $item->quantity_commande * $item->produit->price }} $</td>
                         <td>
-                         @if (!empty($item->reduction->pourcentage))
-                            {{ $item->reduction->pourcentage }} %
-                        @else
-                            Aucune
-                        @endif
-                    </td>
-                        <td>   @if (!empty($item->reduction))
-                            {{ $item->quantity_commande * $item->produit->price - ($item->quantity_commande * $item->produit->price * $item->reduction->pourcentage) / 100 }}
-                            $
-                        @else
-                            {{ $item->quantity_commande * $item->produit->price }} $
-                        @endif</td>
-                        <td>{{ $item->created_at }}</td>
-                        @if ($item->precommande->status == true)
-                        <td><span class="bg-success btn-sm text-white p-2 rounded-sm">confirmé</span>
+                            {{$item->total_price}}
                         </td>
-                    @else
-                        <td><span class="bg-warning btn-sm text-white p-2 rounded-sm">en cours</span>
+                        <td>
+                            {{$item->created_at}}
                         </td>
-                    @endif
+
                       </tr>
                     @endforeach
 
@@ -113,7 +95,7 @@
       "buttons": [ "csv", "excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-    
+
 
   });
 </script>

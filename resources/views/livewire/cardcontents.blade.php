@@ -2,7 +2,8 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">votre panier  </h5><span class="ml-6">{{\CartFacade::getTotal()}}$ total</span><button class="bg-success text-white border-white border-raduis-5">confirmer</button>
+                <h5 class="modal-title">votre panier  </h5><span class="ml-6">{{\CartFacade::getTotal()}}$ total</span>
+                <button wire:click.prevent="store_order()" class="bg-success text-white border-white border-raduis-5">confirmer</button>
 
 
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
