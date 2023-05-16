@@ -20,7 +20,7 @@
                         <span><button wire:click.prevent="plus({{ $item->id }})" class="bg-primary text-white"><i class="fa fa-plus"></i></button></span></div>
                     <div class="col-2">{{$item->quantity * $item->price}} $</div>
                     <div class="col-2"><button wire:click="delete({{$item->id}})"><i class="fa fa-window-close text-danger"></i></button></div>
-                    <div class="col-2">7</div>
+                    <div class="col-2"></div>
                 </div>
             @endforeach
                 {{-- <div class="table-responsive">

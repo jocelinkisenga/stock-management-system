@@ -22,9 +22,7 @@
                     <li class="">
                         <a  href="{{ route('products') }}"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> produits</span>
                             <span class="menu-arrow"></span></a>
-                        {{-- <ul>
-                            <li><a href="{{ route('products') }}">liste des produits </a></li>
-                        </ul> --}}
+
                     </li>
                     <li class="submenu">
                         <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> commandes</span>
@@ -40,16 +38,21 @@
                             <li><a href="{{ route('depenses') }}">liste des depense </a></li>
                         </ul>
                     </li>
+                    <li class="submenu">
+                        <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> Entrées</span>
+                            <span class="menu-arrow"></span></a>
 
+                    </li>
+                    <li class="submenu">
+                        <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> sorties</span>
+                            <span class="menu-arrow"></span></a>
+
+                    </li>
 
                     <li class="submenu">
                         <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}"
                                 alt="img"><span> rapport</span> <span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="{{ route('rapports') }}">rapport générale </a></li>
-                            <li><a href="{{ route('rapports') }}">sorties </a></li>
-                            <li><a href="{{ route('rapports') }}">entrées </a></li>
-                        </ul>
+
                     </li>
                 @endif
 

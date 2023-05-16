@@ -8,7 +8,7 @@ use App\Models\Produit;
 
 /**
  * Summary of OrderRepository
- * this class stores order 
+ * this class stores order
  */
 class OrderRepository
 {
@@ -69,7 +69,7 @@ class OrderRepository
 
 
     /**
-     * Summary of substract_quantity
+     * Summary of substract_quantity  
      * @param mixed $productId
      * @param mixed $quantity
      * @return void

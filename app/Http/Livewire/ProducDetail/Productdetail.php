@@ -4,6 +4,7 @@ namespace App\Http\Livewire\ProducDetail;
 
 use App\Http\Repositorie\ProduitRepository;
 use App\Models\Produit;
+use Auth;
 use Livewire\Component;
 use App\Models\HystoryProduct;
 
@@ -16,7 +17,7 @@ class Productdetail extends Component
      * Summary of render
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
- 
+
     public function render()
     {
      $repo = new ProduitRepository;
@@ -27,7 +28,7 @@ class Productdetail extends Component
         return view('livewire.produc-detail.productdetail');
     }
 
-    
+
     /**
      * Summary of ajouter
      * @param int $produitI
@@ -35,12 +36,13 @@ class Productdetail extends Component
      */
     public function ajouter(int $produitI)
     {
-     
+
         $produit = Produit::find($produitI);
-   
+
         $old_quantity = $produit->quantity;
 
         $history =  HystoryProduct::create([
+            'user_id' => Auth::user()->id,
             'product_id' => $produitI,
             'new_quantity' => $this->produit_quantity,
             'old_quantity' => $old_quantity,
@@ -90,7 +92,7 @@ class Productdetail extends Component
      session()->flash('message','prix modifier avec succès');
      $this->reset_fields();
      $this->dispatchBrowserEvent('close-modal');
-        
+
     }
 
 
