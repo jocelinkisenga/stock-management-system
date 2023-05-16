@@ -10,7 +10,7 @@ class HystoryProduct extends Model
     use HasFactory;
     protected $fillable = ['user_id','product_id','new_quantity','old_quantity','prix_achat'];
 
-    public function produit(){
+    public function product (){
         return $this->belongsTo(Produit::class,"product_id");
     }
 }

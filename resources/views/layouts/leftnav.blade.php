@@ -38,13 +38,13 @@
                             <li><a href="{{ route('depenses') }}">liste des depense </a></li>
                         </ul>
                     </li>
-                    <li class="submenu">
-                        <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> Entrées</span>
+                    <li class="">
+                        <a href="{{route('inputs')}}"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> Entrées</span>
                             <span class="menu-arrow"></span></a>
 
                     </li>
-                    <li class="submenu">
-                        <a><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> sorties</span>
+                    <li class="">
+                        <a href="{{route('outputs')}}"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> sorties</span>
                             <span class="menu-arrow"></span></a>
 
                     </li>

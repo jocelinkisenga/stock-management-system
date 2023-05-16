@@ -162,53 +162,35 @@
                           </th>
                           <th>N°</th>
                           <th>produit</th>
-                          <th>entrées</th>
-                          <th>sorties</th>
-                          <th>solde</th>
-                          <th>prix de vente</th>
-                          <th>vente total</th>
+                          <th>n-quantité</th>
+                          <th>prix</th>
+                          <th>a-quantité</th>
+                          <th>date</th>
                       </tr>
                         </thead>
-                        @isset($data['results'])
+                        @isset($data)
                         <tbody>
-                            @foreach ($data['results'] as $key => $item)
+                            @foreach ($data as $key => $item)
                             <tr>
                                 <td>
                                     {{ $key + 1 }}
                                 </td>
                                 <td>
-                                    {{ $item->name }}
+                                    {{ $item->product->name }}
                                 </td>
                                 <td>
-                                    @if (!empty($item->entries))
-                                        {{ $item->entries }}
-                                    @else
-                                        --
-                                    @endif
-
+                                    {{$item->new_quantity}}
                                 </td>
                                 <td>
-                                    @if (!empty($item->outputs))
-                                        {{ $item->outputs }}
-                                    @else
-                                        --
-                                    @endif
-
+                                    {{$item->prix_achat}}
                                 </td>
                                 <td>
-                                    @if ($item->solde + $item->entries - $item->outputs > 0)
-                                        {{ $item->solde + $item->entries - $item->outputs }}
-                                    @else
-                                        --
-                                    @endif
+                                    {{$item->old_quantity}}
                                 </td>
-                                <td>{{ $item->vente }} $</td>
                                 <td>
-                                    @if ($item->vente * $item->outputs > 0)
-                                        {{ $item->vente * $item->outputs }} $
-                                    @else
-                                        --
-                                    @endif
+                                     {{$item->created_at}}
+                                </td>
+                                <td>
                                 </td>
                             </tr>
                         @endforeach
