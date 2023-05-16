@@ -172,7 +172,7 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$item->product->name}}</td>
-                                <td></td>
+                                <td>{{$item->product_quantity}}</td>
                                 <td></td>
                             </tr>
                         @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Repositorie;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\Produit;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Summary of OrderRepository
@@ -52,6 +53,7 @@ class OrderRepository
                     'order_id' => $order_id,
                     'product_id' => $content['id'],
                     'product_quantity' => $content['quantity'],
+                    'user_id' => Auth::user()->id,
                 ]);
 
                 $this->substract_quantity($content['id'],$content['quantity']);
@@ -69,7 +71,7 @@ class OrderRepository
 
 
     /**
-     * Summary of substract_quantity  
+     * Summary of substract_quantity
      * @param mixed $productId
      * @param mixed $quantity
      * @return void
