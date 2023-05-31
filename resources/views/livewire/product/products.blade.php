@@ -9,7 +9,7 @@
             </div>
             @if (Auth::user()->role_id === App\Enums\RoleEnum::COMPANY)
             <div class="page-btn">
-                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter un produit</a>
+                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added  bg-success"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter un produit</a>
             </div>
             @endif
 
@@ -22,7 +22,7 @@
                 <div class="table-top">
                     <div class="search-set">
                         <div class="search-path">
-                            <a class="btn btn-filter" id="filter_search">
+                            <a class="btn btn-filter bg-success" id="filter_search">
                                 <img src="assets/img/icons/filter.svg" alt="img">
                                 <span><img src="assets/img/icons/closes.svg" alt="img"></span>
                             </a>
@@ -99,12 +99,12 @@
                         <thead>
                             <tr>
                                 </th>
-                                <th>N°</th>
-                                <th>nom</th>
-                                <th>catégorie</th>
-                                <th>quantité</th>
-                                <th>prix</th>
-                                <th>Action</th>
+                                <th class="text-uppercase text-success">N°</th>
+                                <th class="text-uppercase text-success">nom</th>
+                                <th class="text-uppercase text-success">catégorie</th>
+                                <th class="text-uppercase text-success">quantité</th>
+                                <th class="text-uppercase text-success">prix</th>
+                                <th class="text-uppercase text-success">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -117,7 +117,7 @@
                                     {{$item->name}}
                                 </td>
                                 <td>{{$item->categorie->name}}</td>
-                                <td ><span class="bg-warning text-white p-1 rounded-pill">{{$item->quantity}}</span></td>
+                                <td ><span class="bg-success text-white p-1 rounded-pill">{{$item->quantity}}</span></td>
                                 <td>{{$item->price}} $</td>
                                 <td>
                                     <a class="me-3" href="{{route('product-detail',['id'=>$item->id])}}">

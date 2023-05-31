@@ -55,9 +55,9 @@
                 <h4>Liste des produits</h4>
                 <h6></h6>
             </div>
-            <div class="page-btn">
-                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><i
-                        class="fa fa-shopping-basket"></i> <span class="badge rounded-pill">
+            <div class="page-btn bg-success">
+                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added bg-success"><i
+                        class="fa fa-shopping-basket"></i> <span class="badge rounded-pill ">
                         @livewire('contentscount')
                     </span></a>
             </div>
@@ -70,7 +70,7 @@
                 <div class="table-top">
                     <div class="search-set">
                         <div class="search-path">
-                            <a class="btn btn-filter" id="filter_search">
+                            <a class="btn btn-filter bg-success" id="filter_search">
                                 <img src="assets/img/icons/filter.svg" alt="img">
                                 <span><img src="assets/img/icons/closes.svg" alt="img"></span>
                             </a>

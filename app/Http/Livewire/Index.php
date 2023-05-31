@@ -9,7 +9,6 @@ use Livewire\Component;
 class Index extends Component
 {
     public $products;
-
     public $cardContents;
     public $quantity;
 

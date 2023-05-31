@@ -8,7 +8,7 @@
                 <h6></h6>
             </div>
             <div class="page-btn">
-                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter une depense</a>
+                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added bg-success"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter une depense</a>
             </div>
 
         </div>
@@ -20,7 +20,7 @@
                 <div class="table-top">
                     <div class="search-set">
                         <div class="search-path">
-                            <a class="btn btn-filter" id="filter_search">
+                            <a class="btn btn-filter bg-success" id="filter_search">
                                 <img src="assets/img/icons/filter.svg" alt="img">
                                 <span><img src="assets/img/icons/closes.svg" alt="img"></span>
                             </a>
@@ -97,10 +97,10 @@
                         <thead>
                             <tr>
                                 </th>
-                                <th>N°</th>
-                                <th>béneficiaire</th>
-                                <th>montant</th>
-                                <th>motif</th>
+                                <th class="text-uppercase text-success">N°</th>
+                                <th class="text-uppercase text-success">béneficiaire</th>
+                                <th class="text-uppercase text-success">montant</th>
+                                <th class="text-uppercase text-success">motif</th>
                             </tr>
                         </thead>
                         <tbody>

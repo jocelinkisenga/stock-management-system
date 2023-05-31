@@ -6,11 +6,11 @@
                 <h4>Liste des categories</h4>
                 <h6></h6>
             </div>
-            <div class="page-btn">
-                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter une catégorie</a>
+            <div class="page-btn bg-success">
+                <a data-bs-toggle="modal" data-bs-target="#create" class="btn btn-added bg-success"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Ajouter une catégorie</a>
             </div>
         </div>
-        
+
 
         <!-- /product list -->
         <div class="card">
@@ -18,7 +18,7 @@
                 <div class="table-top">
                     <div class="search-set">
                         <div class="search-path">
-                            <a class="btn btn-filter" id="filter_search">
+                            <a class="btn btn-filter bg-success" id="filter_search">
                                 <img src="assets/img/icons/filter.svg" alt="img">
                                 <span><img src="assets/img/icons/closes.svg" alt="img"></span>
                             </a>
@@ -142,7 +142,7 @@
                                 <input type="text" wire:model="name">
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-lg-12">
                         <a class="btn btn-submit me-2" wire:click.prevent="store()">Ajouter</a>
