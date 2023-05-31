@@ -146,13 +146,13 @@
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th>SNo</th>
+                            <tr class="text-uppercase">
+                                <th class="text-success font-bold text-bold">SNo</th>
 
-                                <th>nom</th>
-                                <th>quantité</th>
-                                <th>prix</th>
-                                <th>Actions</th>
+                                <th class="text-success">nom</th>
+                                <th class="text-success">quantité</th>
+                                <th class="text-success">prix</th>
+                                <th class="text-success">Actions</th>
                             </tr>
                         </thead>
                         <tbody>

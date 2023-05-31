@@ -35,24 +35,26 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-      
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     @livewireStyles
 
 </head>
+@include('sweetalert::alert')
+
 
 <body style="background-color: hsl(0, 8%, 47%);">
 
 
 @yield('content')
-   
+
 <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     @livewireScripts
 @yield('script')
     <!-- jQuery -->
 
-  
+
     <script src="{{asset('js/printThis.js')}}"></script>
 
     <!-- Feather Icon JS -->
@@ -90,24 +92,24 @@
     <script>
         $("#facture-commande").click(function(){
                     $("#fac").printThis({
-                        debug: false,             
-                        importCSS: true,            
-                        importStyle: false,         
-                        printContainer: true,      
-                        loadCSS: "", 
-                        pageTitle: "UTOPIAN PRINT",             
-                        removeInline: false,    
-                        printDelay: 1,      
-                        header: null,        
-                        footer: null,            
-                        base: false ,              
-                        formValues: true,          
-                        canvas: false,              
-                        doctypeString: "",      
-                        removeScripts: false,       
-                        copyTagClasses: false  
+                        debug: false,
+                        importCSS: true,
+                        importStyle: false,
+                        printContainer: true,
+                        loadCSS: "",
+                        pageTitle: "UTOPIAN PRINT",
+                        removeInline: false,
+                        printDelay: 1,
+                        header: null,
+                        footer: null,
+                        base: false ,
+                        formValues: true,
+                        canvas: false,
+                        doctypeString: "",
+                        removeScripts: false,
+                        copyTagClasses: false
                     });
-                });    
+                });
     </script>
 
 </body>

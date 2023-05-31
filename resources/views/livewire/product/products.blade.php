@@ -168,7 +168,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="my-select">Text</label>
+                                    <label for="my-select">catégorie</label>
                                     <select id="my-select" class="form-control" wire:model="categorie_id">
                                         <option selected>selectionner une categorie</option>
                                         @foreach ($categories as $item )
@@ -185,8 +185,8 @@
                             'Good job!',
                             'produit créé avec succès',
                             'success'
-                          )">Submit</a>
-                        <a class="btn btn-cancel" data-bs-dismiss="modal">Cancel</a>
+                          )">ajouter</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">annuler</a>
                     </div>
                 </div>
             </div>

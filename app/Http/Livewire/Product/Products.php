@@ -13,7 +13,7 @@ use Livewire\WithFileUploads;
 class Products extends Component
 {
     use WithFileUploads;
-    
+
     public $data, $name,$categorie_id, $categories, $produit_id, $produit_quantity,$product_price, $price, $prix_achat,$prix_vente,$photo;
 
 
@@ -25,7 +25,7 @@ class Products extends Component
     {
         $this->categories = Categorie::where("user_id",Auth::user()->id)->get();
         $this->data = Produit::where('user_id',Auth::user()->id)->get();
-        
+
         return view('livewire.product.products');
     }
 
@@ -54,10 +54,10 @@ class Products extends Component
     public function store()
     {
         $fileName= time().'.'.$this->photo->getClientOriginalName();
-        
+
         $path=$this->photo->storeAs('uploads', $fileName, 'public');
 
-        
+
         // $valide = $this->validate([
         //     'categorie_id' => "required",
         //     'name' => "required",
@@ -69,7 +69,7 @@ class Products extends Component
             'user_id' => Auth::user()->id,
             'categorie_id'=>$this->categorie_id,
             'name'=>$this->name,
-            'price'=>$this->price,
+            'price'=>$this->price,                                                           
             'path'=>$fileName
         ]);
         session()->flash('message', 'produit ajouté avec succès');
