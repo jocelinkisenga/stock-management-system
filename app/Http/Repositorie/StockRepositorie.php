@@ -52,7 +52,7 @@ class StockRepositorie
     public function output($from, $to)
     {
         DB::statement("SET SQL_MODE=''");
-        $result = Db::select("SELECT produits.name, (SELECT SUM(order_details.product_quantity) FROM order_details WHERE order_details.product_id = produits.id) as order_quantity FROM order_details, produits
+        $result = Db::select("SELECT produits.name,produits.price, (SELECT SUM(order_details.product_quantity) FROM order_details WHERE order_details.product_id = produits.id) as order_quantity FROM order_details, produits
                             WHERE produits.user_id = " . Auth::user()->id . " AND order_details.user_id = " . Auth::user()->id . " AND order_details.product_id = produits.id
                             AND  DATE(order_details.created_at) >= '$from' AND DATE(order_details.created_at ) <='$to' GROUP BY order_details.product_id");
 

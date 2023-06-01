@@ -1,6 +1,6 @@
 @extends('layouts.new')
-@if (isset($data["from"]) and isset($data['to']))
-@section("title", 'rapport du '.$data['from'] .' au '.$data['to'])
+@if ($from != null and $to != null)
+@section("title", 'rapport du '.$from.' au '.$to)
 @endif
 
 @section('content')
@@ -33,7 +33,7 @@
                                 @csrf
                                 <div class="row">
 
-                                    <div class="mr-3 col-lg-2 col-sm-6 col-12">
+                                    <div class="mr-3 col-lg-2 col-sm-4 col-md-4 ">
 
                                         <div class="form-group">
                                             <div class="input-groupicon">
@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mr-3 col-lg-2 col-sm-6 col-12">
+                                    <div class="mr-3 col-lg-2 col-sm-4 col-md-4 ">
                                         <div class="form-group">
                                             <div class="input-groupicon text-success">
                                                 <input type="date" name="to">
@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                                    <div class="col-lg-1 col-sm-4 col-md-4 ms-auto">
                                         <div class="form-group">
                                             <button class="btn bg-success btn-filters ms-auto" type="submit"
                                                 ><img src="assets/img/icons/search-whites.svg"
@@ -152,7 +152,7 @@
 
                   <div class="card">
                     <div class="card-header">
-                      <h3 class="card-title">rapport du </h3>
+                      <h3 class="card-title">rapport du @if($from != null and $to != null ) {{$from}} - {{$to}}  @endif</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -163,7 +163,7 @@
                           <th>N°</th>
                           <th>produit</th>
                           <th>quantité</th>
-                          <th>solde</th>
+                          <th>Montant</th>
                       </tr>
                         </thead>
                         @isset($data)
@@ -171,9 +171,9 @@
                             @foreach ($data as $key => $item)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$item->product->name}}</td>
-                                <td>{{$item->product_quantity}}</td>
-                                <td></td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->order_quantity}}</td>
+                                <td>$ {{($item->price)}}.00</td>
                             </tr>
                         @endforeach
 

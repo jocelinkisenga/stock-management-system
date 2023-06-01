@@ -22,6 +22,10 @@ class OutputController extends Controller
     }
 
     public function search(Request $request){
-        dd($this->stock->output($request->from, $request->to));
+        $result = $this->stock->output($request->from, $request->to);
+        $from = $request->from;
+        $to = $request->to;
+        $data = $result["results"];
+        return view("Pages.rapport.outputs",compact('data','from','to'));
     }
 }
