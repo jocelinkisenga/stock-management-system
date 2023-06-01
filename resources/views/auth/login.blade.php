@@ -26,7 +26,10 @@
                 @enderror
 
                 <div class="mt-3">
-                  <input class="btn btn-block btn-success btn-lg font-weight-medium auth-form-btn text-bold" value="se connecter" type="submit" name="login">
+
+                  <button type="submit" class="btn btn-block btn-success btn-lg font-weight-medium auth-form-btn text-bold">
+                    <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> se connecter
+                  </button>
                 </div>
 
               </form>

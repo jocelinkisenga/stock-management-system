@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-top">
-                       <h2> filtrer par date</h2>
+                       <h2 class="text-uppercase text-bold text-success"> filtrer par date</h2>
 
                         {{-- <div id="example1_wrapper"></div> --}}
                     </div>
@@ -36,7 +36,7 @@
 
                                         <div class="form-group">
                                             <div class="input-groupicon">
-                                                <input type="date" name="date_from" >
+                                                <input type="date" name="from" >
                                                 {{-- <div class="addonset">
                                                 <img src="assets/img/icons/calendars.svg" alt="img">
                                             </div> --}}
@@ -46,7 +46,7 @@
                                     <div class="mr-3 col-lg-2 col-sm-6 col-12">
                                         <div class="form-group">
                                             <div class="input-groupicon">
-                                                <input type="date" name="date_to">
+                                                <input type="date" name="to">
                                                 {{-- <div class="addonset">
                                                 <img src="assets/img/icons/calendars.svg" alt="img">
                                             </div> --}}
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="col-lg-1 col-sm-6 col-12 ms-auto">
                                         <div class="form-group">
-                                            <button class="btn btn-filters ms-auto" type="submit"
+                                            <button class="btn btn-filters bg-success ms-auto" type="submit"
                                                 ><img src="assets/img/icons/search-whites.svg"
                                                     alt="img"></button>
                                         </div>
@@ -178,7 +178,7 @@
                                     {{ $item->name }}
                                 </td>
                                 <td>
-                                    {{$item->new_quantity}}
+                                    {{$item->order_quantity}}
                                 </td>
                                 <td>
                                     {{$item->prix_achat}}

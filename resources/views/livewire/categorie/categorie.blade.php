@@ -145,7 +145,7 @@
 
                     </div>
                     <div class="col-lg-12">
-                        <a class="btn btn-submit me-2" wire:click.prevent="store()">Ajouter</a>
+                        <a class="btn btn-submit bg-success me-2" wire:click.prevent="store()"><span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Ajouter</a>
                         <a class="btn btn-cancel" data-bs-dismiss="modal">Annuler</a>
                     </div>
                 </div>

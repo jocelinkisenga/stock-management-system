@@ -181,11 +181,11 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <a class="btn btn-submit me-2" wire:click.prevent="store()"     onclick="Swal.fire(
+                        <a class="btn btn-submit me-2 bg-success" wire:click.prevent="store()"     onclick="Swal.fire(
                             'Good job!',
                             'produit créé avec succès',
                             'success'
-                          )">ajouter</a>
+                          )"><span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> ajouter</a>
                         <a class="btn btn-cancel" data-bs-dismiss="modal">annuler</a>
                     </div>
                 </div>

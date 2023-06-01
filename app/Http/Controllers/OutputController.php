@@ -17,7 +17,7 @@ class OutputController extends Controller
 
         $from = "";
         $to = "";
-        $data = OrderDetails::latest()->where("user_id",Auth::user()->id)->get();
+        $data = [];
         return view('Pages.rapport.outputs',compact('data','from','to'));
     }
 

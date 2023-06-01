@@ -28,7 +28,7 @@ class InputController extends Controller
         $to = "";
         $from ="";
 
-        $data = HystoryProduct::latest()->where('user_id',Auth::user()->id)->get();
+        $data = [];
 
         return view('pages.rapport.entries',compact("data","to","from"));
     }
@@ -43,6 +43,7 @@ class InputController extends Controller
         $from = $request->from;
         $to = $request->to;
         $data = $result["results"];
+        
         return view("Pages.rapport.entries",compact('data','from','to'));
     }
 }
