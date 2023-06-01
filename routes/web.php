@@ -74,6 +74,7 @@ Route::get('/produit-detail/{id}',[ProductController::class,'show'])->name('prod
     Route::get('inputs',[InputController::class,'index'])->name('inputs');
     Route::get('outputs',[OutputController::class,'index'])->name('outputs');
     Route::post('seachoutputs', [OutputController::class,'search'])->name('search.output');
+    Route::post('seachinputs', [InputController::class,'search'])->name('search.input');
 
     Route::get('/roles',[RoleController::class,'index'])->name('roles');
     Route::get('/users',[UserController::class,'index'])->name('users');

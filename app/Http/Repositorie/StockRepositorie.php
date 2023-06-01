@@ -62,6 +62,24 @@ class StockRepositorie
             "to" => $to
         ];
         //$result = HystoryProduct::with('produit')->groupBy("hystory_products.product_id")->get();
+
+
+        return $data;
+    }
+
+    public function input($from, $to)
+    {
+        DB::statement("SET SQL_MODE=''");
+        $result = Db::select("SELECT produits.name,produits.price, (SELECT SUM(hystory_products.new_quantity) FROM hystory_products WHERE hystory_products.product_id = produits.id) as new_quantity FROM hystory_products, produits
+                            WHERE produits.user_id = " . Auth::user()->id . " AND hystory_products.user_id = " . Auth::user()->id . " AND hystory_products.product_id = produits.id
+                            AND  DATE(hystory_products.created_at) >= '$from' AND DATE(hystory_products.created_at ) <='$to' GROUP BY hystory_products.product_id");
+
+        $data = [
+            "results" => $result,
+            "from" => $from,
+            "to" => $to
+        ];
+        //$result = HystoryProduct::with('produit')->groupBy("hystory_products.product_id")->get();
         return $data;
     }
 

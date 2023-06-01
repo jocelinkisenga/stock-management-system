@@ -1,8 +1,7 @@
 @extends('layouts.new')
-@if (isset($data["from"]) and isset($data['to']))
-@section("title", 'rapport du '.$data['from'] .' au '.$data['to'])
+@if ($from != null and $to != null)
+@section("title", 'rapport du '.$from.' au '.$to)
 @endif
-
 @section('content')
 
     <div class="page-wrapper">
@@ -29,7 +28,7 @@
                     <!-- /Filter -->
                     <div class="card" id="">
                         <div class="pb-0 card-body">
-                            <form action="{{ route('search') }}" method="POST">
+                            <form action="{{ route('search.input') }}" method="POST">
                                 @csrf
                                 <div class="row">
 
@@ -57,7 +56,7 @@
                                     <div class="col-lg-1 col-sm-6 col-12 ms-auto">
                                         <div class="form-group">
                                             <button class="btn btn-filters ms-auto" type="submit"
-                                                wire:click.prevent="search()"><img src="assets/img/icons/search-whites.svg"
+                                                ><img src="assets/img/icons/search-whites.svg"
                                                     alt="img"></button>
                                         </div>
                                     </div>
@@ -176,7 +175,7 @@
                                     {{ $key + 1 }}
                                 </td>
                                 <td>
-                                    {{ $item->product->name }}
+                                    {{ $item->name }}
                                 </td>
                                 <td>
                                     {{$item->new_quantity}}
@@ -185,10 +184,10 @@
                                     {{$item->prix_achat}}
                                 </td>
                                 <td>
-                                    {{$item->old_quantity}}
+
                                 </td>
                                 <td>
-                                     {{$item->created_at}}
+
                                 </td>
                                 <td>
                                 </td>
