@@ -4,12 +4,15 @@ namespace App\Http\Repositorie;
 
 use App\Models\Commande;
 use App\Models\HystoryProduct;
+use Auth;
 use Illuminate\Support\Facades\DB;
 
-class StockRepositorie {
+class StockRepositorie
+{
 
-    public function stock($from, $to){
-//         DB::statement("SET SQL_MODE=''");
+    public function stock($from, $to)
+    {
+        //         DB::statement("SET SQL_MODE=''");
 //      $result =   DB::select("SELECT produits.name,DATE(hystory_products.created_at),
 //                                     hystory_products.prix_achat as achat, produits.price as vente,
 //                                     (SELECT SUM(new_quantity)
@@ -28,7 +31,7 @@ class StockRepositorie {
 
 
 
-//         $data = [
+        //         $data = [
 //             "results" => $result,
 //             "from" => $from,
 //             "to" => $to
@@ -37,13 +40,30 @@ class StockRepositorie {
 // return $data;
     }
 
-public function commandes(){
-    //code, somme de la quantité, somme du prix, reduction, $prix total, date de la precommande
-    DB::statement("SET SQL_MODE=''");
-    return Db::select("SELECT precommandes.code, precommandes.created_at,
+    public function commandes()
+    {
+        //code, somme de la quantité, somme du prix, reduction, $prix total, date de la precommande
+        DB::statement("SET SQL_MODE=''");
+        return Db::select("SELECT precommandes.code, precommandes.created_at,
                         (SELECT SUM(quantity_commande) FROM commandes WHERE precommandes.id = commandes.precommande_id) as quantity_commande, (SELECT SUM(produits.price) FROM produits WHERE produits.id = commandes.produit_id) as price
     , commandes.reduction FROM commandes, produits, precommandes WHERE precommandes.id = commandes.id AND commandes.produit_id = produits.id GROUP BY precommandes.code ORDER bY precommandes.created_at DESC");
-}
+    }
+
+    public function output($from, $to)
+    {
+        DB::statement("SET SQL_MODE=''");
+        $result = Db::select("SELECT produits.name, (SELECT SUM(order_details.product_quantity) FROM order_details WHERE order_details.product_id = produits.id) as order_quantity FROM order_details, produits
+                            WHERE produits.user_id = " . Auth::user()->id . " AND order_details.user_id = " . Auth::user()->id . " AND order_details.product_id = produits.id
+                            AND  DATE(order_details.created_at) >= '$from' AND DATE(order_details.created_at ) <='$to' GROUP BY order_details.product_id");
+
+        $data = [
+            "results" => $result,
+            "from" => $from,
+            "to" => $to
+        ];
+        //$result = HystoryProduct::with('produit')->groupBy("hystory_products.product_id")->get();
+        return $data;
+    }
 
 
 }

@@ -29,7 +29,7 @@
                     <!-- /Filter -->
                     <div class="card" id="">
                         <div class="pb-0 card-body">
-                            <form action="{{ route('search') }}" method="POST">
+                            <form action="{{ route('search.output') }}" method="POST">
                                 @csrf
                                 <div class="row">
 
@@ -37,7 +37,7 @@
 
                                         <div class="form-group">
                                             <div class="input-groupicon">
-                                                <input type="date" name="date_from" >
+                                                <input type="date" name="from" >
                                                 {{-- <div class="addonset">
                                                 <img src="assets/img/icons/calendars.svg" alt="img">
                                             </div> --}}
@@ -47,7 +47,7 @@
                                     <div class="mr-3 col-lg-2 col-sm-6 col-12">
                                         <div class="form-group">
                                             <div class="input-groupicon text-success">
-                                                <input type="date" name="date_to">
+                                                <input type="date" name="to">
                                                 {{-- <div class="addonset">
                                                 <img src="assets/img/icons/calendars.svg" alt="img">
                                             </div> --}}
@@ -57,7 +57,7 @@
                                     <div class="col-lg-1 col-sm-6 col-12 ms-auto">
                                         <div class="form-group">
                                             <button class="btn bg-success btn-filters ms-auto" type="submit"
-                                                wire:click.prevent="search()"><img src="assets/img/icons/search-whites.svg"
+                                                ><img src="assets/img/icons/search-whites.svg"
                                                     alt="img"></button>
                                         </div>
                                     </div>
